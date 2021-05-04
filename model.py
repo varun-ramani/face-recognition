@@ -2,15 +2,14 @@
 # Code taken from https://github.com/iwantooxxoox/Keras-OpenFace (with minor modifications)
 # -----------------------------------------------------------------------------------------
 
-from keras.layers import Conv2D, ZeroPadding2D, Activation, Input, concatenate
-from keras.layers.core import Lambda, Flatten, Dense
-from keras.layers.normalization import BatchNormalization
-from keras.layers.pooling import MaxPooling2D, AveragePooling2D
-from keras.models import Model
-from keras import backend as K
-
-import utils
-from utils import LRN2D
+from tensorflow.keras.layers import (Conv2D, ZeroPadding2D, Activation, 
+                                     Input, concatenate, Lambda,
+                                     Flatten, Dense, BatchNormalization, 
+                                     MaxPooling2D, AveragePooling2D)
+from tensorflow.keras.models import Model
+from tensorflow.keras import backend as K
+from . import utils
+from .utils import LRN2D
 
 def create_model():
     myInput = Input(shape=(96, 96, 3))
